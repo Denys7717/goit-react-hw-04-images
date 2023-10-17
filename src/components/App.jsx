@@ -1,4 +1,4 @@
-import Searchbar from './Searchbar/Searchbar';
+import { Searchbar } from './Searchbar/Searchbar';
 import { useEffect, useState } from 'react';
 import { PixabayApi } from 'api/photos';
 import { ImageGallery } from './ImageGallery/ImageGallery';
@@ -7,7 +7,7 @@ import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
 import Notiflix from 'notiflix';
 
-const App = () => {
+export const App = () => {
   const [query, setQuery] = useState('');
   const [hits, setHits] = useState([]);
   const [showBtn, setShowBtn] = useState(null);
@@ -49,15 +49,11 @@ const App = () => {
     setPage(1);
   };
   return (
-    <>
-      <div className={css.app}>
-        <Searchbar onSubmit={onSubmit} />
-        {hits && <ImageGallery data={hits} />}
-        {showBtn && <Button loadMore={loadMore} />}
-        {loading && <Loader />}
-      </div>
-    </>
+    <div className={css.app}>
+      <Searchbar onSubmit={onSubmit} />
+      {hits && <ImageGallery data={hits} />}
+      {showBtn && <Button loadMore={loadMore} />}
+      {loading && <Loader />}
+    </div>
   );
 };
-
-export default App;

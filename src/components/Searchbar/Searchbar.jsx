@@ -2,7 +2,7 @@ import { useState } from 'react';
 import css from './Searchbar.module.css';
 import Notiflix from 'notiflix';
 
-const Searchbar = ({ onSubmit }) => {
+export const Searchbar = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
 
   const handleChange = event => {
@@ -37,5 +37,3 @@ const Searchbar = ({ onSubmit }) => {
     </>
   );
 };
-
-export default Searchbar;

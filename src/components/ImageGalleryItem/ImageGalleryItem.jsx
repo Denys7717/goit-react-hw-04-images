@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import css from './ImageGalleryItem.module.css';
-import Modal from 'components/Modal/Modal';
+import { Modal } from 'components/Modal/Modal';
 
-const ImageGalleryItem = ({ data: { webformatURL, tags, largeImageURL } }) => {
+export const ImageGalleryItem = ({
+  data: { webformatURL, tags, largeImageURL },
+}) => {
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
@@ -23,5 +25,3 @@ const ImageGalleryItem = ({ data: { webformatURL, tags, largeImageURL } }) => {
     </>
   );
 };
-
-export default ImageGalleryItem;

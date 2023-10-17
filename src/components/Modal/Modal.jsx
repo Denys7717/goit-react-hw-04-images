@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import css from './Modal.module.css';
 const modalRoot = document.querySelector('#modal-root');
 
-const Modal = ({ largeImageURL, toggleModal }) => {
+export const Modal = ({ largeImageURL, toggleModal }) => {
   useEffect(() => {
     window.addEventListener('keydown', handleKeyEsc);
     return () => {
@@ -28,5 +28,3 @@ const Modal = ({ largeImageURL, toggleModal }) => {
     modalRoot
   );
 };
-
-export default Modal;
