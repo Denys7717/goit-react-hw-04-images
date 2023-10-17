@@ -48,6 +48,7 @@ export const App = () => {
     setHits([]);
     setPage(1);
   };
+
   return (
     <div className={css.app}>
       <Searchbar onSubmit={onSubmit} />
