@@ -5,15 +5,15 @@ const modalRoot = document.querySelector('#modal-root');
 
 export const Modal = ({ largeImageURL, toggleModal }) => {
   useEffect(() => {
+    const handleKeyEsc = event => {
+      if (event.code === 'Escape') toggleModal();
+    };
     window.addEventListener('keydown', handleKeyEsc);
+
     return () => {
       window.removeEventListener('keydown', handleKeyEsc);
     };
-  }, []);
-
-  const handleKeyEsc = event => {
-    if (event.code === 'Escape') this.props.toggleModal();
-  };
+  }, [toggleModal]);
 
   const closeBackDrop = event => {
     if (event.currentTarget === event.target) toggleModal();
